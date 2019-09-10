@@ -4,8 +4,6 @@ import Octicon, {Key } from "@githubprimer/octicons-react";
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
-import FinancialCalculatorMath from  '../../lib/FinancialCalculatorMath';
-import * as financejs from 'financejs';
 
 class FutureValueForm extends Component {
   static contextType = AuthContext;
@@ -17,8 +15,7 @@ class FutureValueForm extends Component {
     periods: "",
     years: "",
     isLoading: true,
-    error: "",
-    result1: 0.0
+    error: ""
   };
 
   handleInputChange = event => {
@@ -39,23 +36,11 @@ class FutureValueForm extends Component {
 
     var dataForAirtable = {
       userID: this.context.user.id,
-      presentValue: parseFloat(this.state.presentValue),
-      periods: parseFloat(this.state.periods),
-      rate: parseFloat(this.state.rate),
-      years: parseFloat(this.state.years)
+      presentValue: parseInt(this.state.presentValue),
+      periods: parseInt(this.state.periods),
+      rate: parseInt(this.state.rate),
+      years: parseInt(this.state.years)
     }
-
-    console.log(`${typeof rate} ${typeof years}`);
-    console.log(`${typeof dataForAirtable.rate} ${typeof dataForAirtable.years}`);
-
-    const fc = new financejs();
-    const ciResult = fc.CI(dataForAirtable.rate, dataForAirtable.periods, dataForAirtable.presentValue, dataForAirtable.years);
-    console.log(`Result FC LIB CI: ${ciResult}`);
-
-    // Exampleof using a math function
-    this.setState({ result1: ciResult });
-
-    console.log(`Demonstrate X+Y math lib: ${FinancialCalculatorMath.adds(years, rate)}`);
     console.log(dataForAirtable)
 
     API.FinancialCalculators.post(this.context.authToken, dataForAirtable).then(function(response) {
@@ -71,17 +56,13 @@ class FutureValueForm extends Component {
       presentValue,
       rate,
       periods,
-      years,
+      years
       // isLoading,
       // error
-      result1
     } = this.state;
 
     return (
       <div className="FutureValueForm">
-        <div className="Results">
-          <h3>CI Results = {result1.toFixed(2)}</h3>
-        </div>
         <div className="card">
           <div className="card-body">
             <form onSubmit={this.handleSubmit}>
@@ -89,7 +70,6 @@ class FutureValueForm extends Component {
                 <div className="input-group-prepend">
                   <span className="input-group-text">
                     <Octicon icon={Key} />
-                     Present Value ($)
                   </span>
                 </div>
                 <input
@@ -109,7 +89,6 @@ class FutureValueForm extends Component {
                 <div className="input-group-prepend">
                   <span className="input-group-text">
                     <Octicon icon={Key} />
-                  Interest Rate (%)
                   </span>
                 </div>
                 <input
@@ -131,7 +110,6 @@ class FutureValueForm extends Component {
                 <div className="input-group-prepend">
                   <span className="input-group-text">
                     <Octicon icon={Key} />
-                    Period
                   </span>
                 </div>
                 <input
@@ -152,7 +130,6 @@ class FutureValueForm extends Component {
                 <div className="input-group-prepend">
                   <span className="input-group-text">
                     <Octicon icon={Key} />
-                  Years
                   </span>
                 </div>
                 <input
@@ -170,7 +147,7 @@ class FutureValueForm extends Component {
               </div>
 
               <button className="btn btn-primary" type="submit">
-                Calculate Compound Interest (CI)
+                CREATE AirtableDb entry
               </button>
             </form>
           </div>
