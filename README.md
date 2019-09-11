@@ -20,7 +20,7 @@ There is no shortage of books, seminars and opportunities to create wealth throu
 
 There is, however, much confusion that results in limited understanding by most on the foundation of wealth creation ... it's maintenance. The activities here can best be described as defensive strategies to wealth creation.
 
-The focus of the I Love Family Banking App is to provide easy to use tools that assist in both offensive and defensive strategies to wealth creation.  This user friendly tool is design to be robust: from the user experience as well as for web developer.
+The focus of the I Love Family Banking App is to provide easy to use tools that assist in both offensive and defensive strategies to wealth creation.  This user friendly tool is design to be robust: from the user experience as well as for the web developer.
 
 ## I Love Family Banking App
 
