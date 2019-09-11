@@ -24,7 +24,7 @@ The focus of the I Love Family Banking App is to provide easy to use tools that 
 
 ## I Love Family Banking App
 
-The user friendly interface provides access to both basic financial calculator and relevant banking information as well as tailored financial calculators the incorporate wealth creation and wealth maintenance strategies.
+The user friendly interface provides access to both basic financial calculators and relevant banking information as well as tailored financial calculators that incorporate wealth creation and wealth maintenance strategies.
 
 The web developer will recognize the "Full-Stack React Client-Server REST API driven JWT authenticated App" structure.
 This is a World-Class State-of-the-Art 21st Century App.
