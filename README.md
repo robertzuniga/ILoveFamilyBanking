@@ -34,3 +34,7 @@ This is a World-Class State-of-the-Art 21st Century App.
 If used properly, the I Love Family Banking App will do two things: help you make informed strategic decisions in both wealth creation 
 and wealth maintenance.
 
+## Contact Information
+
+For more information, visit ILoveFamilyBanking.com
+
