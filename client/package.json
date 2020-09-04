@@ -5,7 +5,7 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@githubprimer/octicons-react": "^8.5.0",
-    "airtable": "^0.7.1",
+    "airtable": "^0.7.2",
     "axios": "^0.18.1",
     "financejs": "^4.1.0",
     "react": "^16.8.3",
